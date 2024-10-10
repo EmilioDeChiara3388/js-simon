@@ -15,7 +15,7 @@ let timerEl = document.querySelector(".timer");
 
 
 let pcRandomNumbers = [];
-for (let i = 0; i < 5; i++){
+for (let i = 0; i < 5; i++) {
     let randomNumbers = Math.floor(Math.random() * 100) + 1;
     pcRandomNumbers.push(randomNumbers);
     console.log(randomNumbers);
@@ -28,30 +28,45 @@ console.log(pcRandomNumbers);
 let seconds = 1;
 let clock = setInterval(countDown, 1000);
 
-function countDown(){
-    if (seconds == 0){
+function countDown() {
+    if (seconds == 0) {
         pcNumbersEl.classList.add("guess");
         userNumbersEl.classList.remove("guess");
         timerEl.classList.add("guess");
         clearInterval(clock);
     } else {
         timerEl.innerHTML = ("Ti restano " + seconds + " secondi");
-        seconds --;
+        seconds--;
     }
 }
 
 //Confrontare numeri dell'user con quelli random iniziare, e dare valori di risposta.
-userNumbersEl.addEventListener("submit", function(e){
+userNumbersEl.addEventListener("submit", function (e) {
     e.preventDefault();
     let userGuess = [];
-    
-    userChoice1 = document.getElementById('number1').value;
-    userChoice2 = document.getElementById('number2').value;
-    userChoice3 = document.getElementById('number3').value;
-    userChoice4 = document.getElementById('number4').value;
-    userChoice5 = document.getElementById('number5').value;
+
+    let userChoice1 = document.getElementById('number1').value;
+    let userChoice2 = document.getElementById('number2').value;
+    let userChoice3 = document.getElementById('number3').value;
+    let userChoice4 = document.getElementById('number4').value;
+    let userChoice5 = document.getElementById('number5').value;
 
     userGuess.push(userChoice1, userChoice2, userChoice3, userChoice4, userChoice5);
     console.log(userGuess);
+
+    let count = 0;
+    if (pcRandomNumbers.includes(userChoice1)) {
+        count++
+    } else if (pcRandomNumbers.includes(userChoice2)) {
+        count++
+    } else if (pcRandomNumbers.includes(userChoice3)) {
+        count++
+    } else if (pcRandomNumbers.includes(userChoice4)) {
+        count
+    } else if (pcRandomNumbers.includes(userChoice5)) {
+        count++
+    };
+
+    console.log(count);
 
 });
