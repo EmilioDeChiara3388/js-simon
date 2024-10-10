@@ -1,3 +1,7 @@
-.pcNumbers{
+.pcNumbers, .timer{
     padding: 2rem;
+}
+
+.guess{
+    display: none;
 }
