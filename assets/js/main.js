@@ -9,7 +9,7 @@ NOTA: non è importante l'ordine con cui l'utente inserisce i numeri, basta che 
 
 //Preparazione:
 //Visualizzare in pagina 5 numeri casuali (Math random: 1-100);
-let pcNumbersEl = document.querySelector(".pcNumbers");
+let pcNumbersEl = document.querySelector(".pc_Numbers");
 let userNumbersEl = document.querySelector(".userNumbers");
 let timerEl = document.querySelector(".timer");
 
@@ -25,7 +25,7 @@ console.log(pcRandomNumbers);
 
 //Far partire timer di 30 secondi;
 //Alla fine del timer, far sparire i numeri, e mettere input per inserire 5 numeri dall'user;
-let seconds = 3;
+let seconds = 1;
 let clock = setInterval(countDown, 1000);
 
 function countDown(){
@@ -44,12 +44,14 @@ function countDown(){
 userNumbersEl.addEventListener("submit", function(e){
     e.preventDefault();
     let userGuess = [];
-    console.log(e.target.number1.value);
-    console.log(e.target.number2.value);
-    console.log(e.target.number3.value);
-    console.log(e.target.number4.value);
-    console.log(e.target.number5.value);
     
-    let userChoices = document.getElementById('number1').value;
-    userGuess.push(userChoices);
+    userChoice1 = document.getElementById('number1').value;
+    userChoice2 = document.getElementById('number2').value;
+    userChoice3 = document.getElementById('number3').value;
+    userChoice4 = document.getElementById('number4').value;
+    userChoice5 = document.getElementById('number5').value;
+
+    userGuess.push(userChoice1, userChoice2, userChoice3, userChoice4, userChoice5);
+    console.log(userGuess);
+
 });
