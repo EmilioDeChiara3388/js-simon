@@ -9,10 +9,10 @@ NOTA: non è importante l'ordine con cui l'utente inserisce i numeri, basta che 
 
 //Preparazione:
 //Visualizzare in pagina 5 numeri casuali (Math random: 1-100);
-const pcNumbersEl = document.querySelector(".pcNumbers");
-const userNumbersEl = document.querySelector(".userNumbers");
-const timerEl = document.querySelector(".timer");
-const buttonEl = document.getElementById("button");
+let pcNumbersEl = document.querySelector(".pcNumbers");
+let userNumbersEl = document.querySelector(".userNumbers");
+let timerEl = document.querySelector(".timer");
+
 
 let pcRandomNumbers = [];
 for (let i = 0; i < 5; i++){
@@ -41,6 +41,15 @@ function countDown(){
 }
 
 //Confrontare numeri dell'user con quelli random iniziare, e dare valori di risposta.
-/* buttonEl.addEventListener("submit", function(e){
+userNumbersEl.addEventListener("submit", function(e){
     e.preventDefault();
-}); */
+    let userGuess = [];
+    console.log(e.target.number1.value);
+    console.log(e.target.number2.value);
+    console.log(e.target.number3.value);
+    console.log(e.target.number4.value);
+    console.log(e.target.number5.value);
+    
+    let userChoices = document.getElementById('number1').value;
+    userGuess.push(userChoices);
+});
