@@ -9,6 +9,12 @@ NOTA: non è importante l'ordine con cui l'utente inserisce i numeri, basta che 
 
 //Preparazione:
 //Visualizzare in pagina 5 numeri casuali (Math random: 1-100);
+for (let i = 0; i < 5; i++){
+    let randomNumbers = Math.floor(Math.random() * 100) + 1;
+    console.log(randomNumbers);
+}
+
+
 //Far partire timer di 30 secondi;
 //Alla fine del timer, far sparire i numeri, e mettere input per inserire 5 numeri dall'user;
 //Confrontare numeri dell'user con quelli random iniziare, e dare valori di risposta.
