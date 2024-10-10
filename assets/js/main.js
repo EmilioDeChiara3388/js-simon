@@ -9,9 +9,12 @@ NOTA: non è importante l'ordine con cui l'utente inserisce i numeri, basta che 
 
 //Preparazione:
 //Visualizzare in pagina 5 numeri casuali (Math random: 1-100);
+const pcNumbersEl = document.querySelector(".pcNumbers");
+
 for (let i = 0; i < 5; i++){
     let randomNumbers = Math.floor(Math.random() * 100) + 1;
     console.log(randomNumbers);
+    pcNumbersEl.innerHTML += `<p>${randomNumbers}</p>`;
 }
 
 
