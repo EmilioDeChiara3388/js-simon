@@ -12,6 +12,7 @@ NOTA: non è importante l'ordine con cui l'utente inserisce i numeri, basta che 
 let pcNumbersEl = document.querySelector(".pc_Numbers");
 let userNumbersEl = document.querySelector(".userNumbers");
 let timerEl = document.querySelector(".timer");
+let resultEl = document.querySelector(".result");
 
 
 let pcRandomNumbers = [];
@@ -25,7 +26,7 @@ console.log(pcRandomNumbers);
 
 //Far partire timer di 30 secondi;
 //Alla fine del timer, far sparire i numeri, e mettere input per inserire 5 numeri dall'user;
-let seconds = 1;
+let seconds = 30;
 let clock = setInterval(countDown, 1000);
 
 function countDown() {
@@ -45,28 +46,29 @@ userNumbersEl.addEventListener("submit", function (e) {
     e.preventDefault();
     let userGuess = [];
 
-    let userChoice1 = document.getElementById('number1').value;
-    let userChoice2 = document.getElementById('number2').value;
-    let userChoice3 = document.getElementById('number3').value;
-    let userChoice4 = document.getElementById('number4').value;
-    let userChoice5 = document.getElementById('number5').value;
+    let userChoice1 = Number(document.getElementById('number1').value);
+    let userChoice2 = Number(document.getElementById('number2').value);
+    let userChoice3 = Number(document.getElementById('number3').value);
+    let userChoice4 = Number(document.getElementById('number4').value);
+    let userChoice5 = Number(document.getElementById('number5').value);
 
     userGuess.push(userChoice1, userChoice2, userChoice3, userChoice4, userChoice5);
     console.log(userGuess);
 
     let count = 0;
-    if (pcRandomNumbers.includes(userChoice1)) {
-        count++
-    } else if (pcRandomNumbers.includes(userChoice2)) {
-        count++
-    } else if (pcRandomNumbers.includes(userChoice3)) {
-        count++
-    } else if (pcRandomNumbers.includes(userChoice4)) {
-        count
-    } else if (pcRandomNumbers.includes(userChoice5)) {
-        count++
-    };
-
+    for (let i = 0; i < pcRandomNumbers.length; i++){
+        if (pcRandomNumbers[i] == userChoice1){
+            count++
+        } else if (pcRandomNumbers[i] == userChoice2){
+            count++
+        } else if (pcRandomNumbers[i] == userChoice3){
+            count++
+        } else if (pcRandomNumbers[i] == userChoice4){
+            count++
+        } else if (pcRandomNumbers[i] == userChoice5){
+            count++
+        }
+    }
     console.log(count);
-
+    resultEl.innerHTML = ("Complimenti, hai indovinato " + count + " numeri!");
 });
