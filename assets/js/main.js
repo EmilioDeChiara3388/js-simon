@@ -44,16 +44,12 @@ function countDown() {
 //Confrontare numeri dell'user con quelli random iniziare, e dare valori di risposta.
 userNumbersEl.addEventListener("submit", function (e) {
     e.preventDefault();
-    let userGuess = [];
 
     let userChoice1 = Number(document.getElementById('number1').value);
     let userChoice2 = Number(document.getElementById('number2').value);
     let userChoice3 = Number(document.getElementById('number3').value);
     let userChoice4 = Number(document.getElementById('number4').value);
     let userChoice5 = Number(document.getElementById('number5').value);
-
-    userGuess.push(userChoice1, userChoice2, userChoice3, userChoice4, userChoice5);
-    console.log(userGuess);
 
     let count = 0;
     for (let i = 0; i < pcRandomNumbers.length; i++){
